@@ -1,0 +1,49 @@
+.crewmate-detail {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.crewmate-detail h1 {
+  margin: 1.25rem 0 1.5rem;
+}
+
+.crewmate-detail-attributes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.crewmate-detail-attributes dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted-color, #777);
+}
+
+.crewmate-detail-attributes dd {
+  margin: 0.15rem 0 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.crewmate-detail-catchphrase {
+  font-style: italic;
+  color: var(--muted-color, #555);
+  border-left: 4px solid var(--accent-color, #6b2fbb);
+  padding-left: 1rem;
+  margin: 0 0 1.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+.crewmate-detail-actions {
+  display: flex;
+  gap: 1rem;
+}

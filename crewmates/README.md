@@ -2,6 +2,34 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
+## Supabase setup
+
+This app reads/writes a `crewmates` table via [supabase-js](https://supabase.com/docs/reference/javascript). To run it locally:
+
+1. Copy `.env.example` to `.env.local` and fill in your Supabase project's URL and anon/publishable key (Project Settings → Data API).
+2. In the Supabase SQL Editor, create the table:
+
+   ```sql
+   create table crewmates (
+     id bigint generated always as identity primary key,
+     created_at timestamptz not null default now(),
+     name text not null,
+     color text not null default 'red',
+     hat text not null default 'none',
+     pet text not null default 'none',
+     catchphrase text
+   );
+
+   alter table crewmates enable row level security;
+
+   create policy "Allow all access to crewmates"
+     on crewmates for all
+     using (true)
+     with check (true);
+   ```
+
+3. `npm install && npm run dev`
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
